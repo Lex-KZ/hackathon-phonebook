@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   before_action :authenticate_user!, only: [:restricted]
+
   def index
   end
   
@@ -23,4 +24,9 @@ class ContactsController < ApplicationController
 
   def restricted
   end
+
+  private
+    def params
+      
+    end
 end
