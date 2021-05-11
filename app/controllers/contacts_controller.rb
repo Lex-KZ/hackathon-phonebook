@@ -1,7 +1,11 @@
 class ContactsController < ApplicationController
-  before_action :authenticate_user!, only: [:restricted]
+  before_action :authenticate_user!, 
+  # only: [:restricted]
 
   def index
+    if current_user
+      @contacts = current_user.contacts
+    end
   end
   
   def create
