@@ -33,17 +33,17 @@ class ContactsController < ApplicationController
   end
 
   def show
-    # @contact = current_user.contacts
-    
+    @contact = current_user.contacts.all.find(params[:id])
   end
 
   def update
+    @contact = current_user.contacts.all.find(params[:id])
     respond_to do |format|
       if @contact.update(contact_params)
         format.html { redirect_to @contact, notice: "Contact was successfully updated." }
-        format.json { render :show, status: :created, location: @contact }
+        format.json { render :show, status: :ok, location: @contact }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
       end
     end
@@ -51,6 +51,7 @@ class ContactsController < ApplicationController
   end
 
   def destroy
+    @contact = current_user.contacts.all.find(params[:id])
     @contact.destroy
     respond_to do |format|
       format.html { redirect_to contacts_url, notice: "Contact was successfully destroyed." }
@@ -63,8 +64,7 @@ class ContactsController < ApplicationController
 
   private
     def set_contact
-      @contacts = current_user.contacts.all.find(params[:id])
-
+      @contact = current_user.contacts.all.find(params[:id])
     end
 
     def contact_params
