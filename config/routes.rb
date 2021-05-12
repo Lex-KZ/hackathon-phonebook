@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'contacts/:id', to: 'contacts#show', as: 'contact'
   patch 'contacts/:id', to: 'contacts#update'
   put 'contacts/:id', to: 'contacts#update'
-  delete 'contacts/destroy', to: 'contacts#destroy'
+  delete 'contacts/:id', to: 'contacts#destroy'
 
   get '/restricted', to: 'contacts#restricted', as: 'restricted'
   get '/users', to: 'users#index', as: 'users'

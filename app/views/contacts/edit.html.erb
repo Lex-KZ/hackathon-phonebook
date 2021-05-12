@@ -1,3 +1,6 @@
 <h1>Edit Contact</h1>
 
-<%= render "form", contact: @contact, first_name: @first_name, last_name: @last_name%>
+<%= render "form", contact: @contact, first_name: @first_name, last_name: @last_name, nickname: @nickname, phone_number: @phone_number, email: @email%>
+<br>
+<%= link_to 'Show', @contact %> |
+<%= link_to 'Back', contact_path %>
