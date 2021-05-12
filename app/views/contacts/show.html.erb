@@ -1,14 +1,21 @@
-
-
 <p>
-  <strong>Name:</strong>
+  <strong>First Name:</strong>
   <%= @contact.first_name %>
 </p>
 
 <p>
-  <strong>Difficulty:</strong>
+  <strong>Last Name:</strong>
   <%= @contact.last_name %>
 </p>
-
+<p>
+  <strong>Nickname:</strong>
+  <%= @contact.nickname %>
+</p><p>
+  <strong>Phone number:</strong>
+  <%= @contact.phone_number %>
+</p><p>
+  <strong>Email:</strong>
+  <%= @contact.email %>
+</p>
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>

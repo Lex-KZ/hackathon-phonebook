@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   before_action :authenticate_user! 
-  before_action :set_contact, only: %i[:show, :edit, :update, :destroy]
+  before_action :set_contact, only: %i[ show edit update destroy ]
   # only: [:restricted]
   
   def index
@@ -47,7 +47,6 @@ class ContactsController < ApplicationController
         format.json { render json: @contact.errors, status: :unprocessable_entity }
       end
     end
-    redirect_to contacts_path
   end
 
   def destroy
